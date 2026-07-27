@@ -34,4 +34,31 @@
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
+# Function to check if a number is prime
+import math
 
+def check_prime(n):
+    if n < 2:
+        return False
+    elif n == 2:
+        return True
+
+    for i in range(2, int(math.sqrt(n)) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+
+def main():
+    num = int(input("Enter a number: "))
+
+    result = check_prime(num)
+
+    if result:
+        print(f"{num} is a prime number")
+    else:
+        print(f"{num} is not a prime number")
+
+
+main()
